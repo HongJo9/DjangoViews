@@ -16,10 +16,16 @@ Incluyendo otra configuración de URLs
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import bienvenida, bienvenidaRojo
+from MiProyecto.views import bienvenida, bienvenidaRojo, categoriaEdad, obtenerMomentosActual, contenidoHTML, miPrimeraPlantilla, plantillaParametros, plantillaCargador
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida),
-    path('bienvenida123/', bienvenidaRojo)
+    path('bienvenida123/', bienvenidaRojo),
+    path('categoria/<int:edad>/', categoriaEdad),
+    path('obtenerMomentoActual/', obtenerMomentosActual),
+    path('contenidoHTML/<str:nombre>/<int:edad>/', contenidoHTML),
+    path('miPrimeraPlantilla/', miPrimeraPlantilla),
+    path('miPrimeraPlantilla2/', plantillaParametros),
+    path('plantillaParametros3/', plantillaCargador),
 ]

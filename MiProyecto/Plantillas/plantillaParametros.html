@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    li {
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>Nombre del canal: {{nombreCanal}}</h1>
+    <h2>mi edad es {{edad}}</h2>
+    {#Este es un comentario #}
+    <h2>Nº de lenguajes: {{lenguajes|length}}</h2>
+    <h2>y hoy es {{fecha.day}} / {{fecha.month}} / {{fecha.year}}</h2>
+    <ul>
+      {% for leng in lenguajes %} {%if leng == 'Python' %}
+      <li style="color: yellow">{{leng}}</li>
+      {% else %}
+      <li>{{leng|first}} : {{leng|lower}}</li>
+      {% endif %} {% endfor %}
+      {% comment %}
+      Este es otro tipo de comentario de 
+      mas de una linea
+      {% endcomment %}
+    </ul>
+  </body>
+</html>
