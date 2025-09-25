@@ -16,7 +16,7 @@ Incluyendo otra configuración de URLs
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import bienvenida, bienvenidaRojo, categoriaEdad, obtenerMomentosActual, contenidoHTML, miPrimeraPlantilla, plantillaParametros, plantillaCargador
+from MiProyecto.views import bienvenida, bienvenidaRojo, categoriaEdad, obtenerMomentosActual, contenidoHTML, miPrimeraPlantilla, plantillaParametros, plantillaCargador, plantillaShortcut, plantillaHija1, plantillaHija2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,7 @@ urlpatterns = [
     path('miPrimeraPlantilla/', miPrimeraPlantilla),
     path('miPrimeraPlantilla2/', plantillaParametros),
     path('plantillaParametros3/', plantillaCargador),
+    path('plantillaParametros4/', plantillaShortcut),
+    path('plantillaHija1/', plantillaHija1),
+    path('plantillaHija2/', plantillaHija2),
 ]

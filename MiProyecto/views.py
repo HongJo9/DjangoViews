@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 
 #request: Para realizar peticiones
 #HttpResponse: Para enviar la respuesta usando el protocolo HTTP
@@ -86,3 +87,16 @@ def plantillaCargador(request):
     documento = plantillaExterna.render({"nombreCanal": nombre, "edad": edad, "fecha": fecha_actual, "lenguajes": lenguajes})
     return HttpResponse(documento)
 
+
+def plantillaShortcut(request):
+    nombre = "Luis"
+    edad = 24
+    fecha_actual = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    lenguajes = ["Python", "JavaScript", "Java", "C#", "PHP", "C++", "Ruby", "go"]
+    return render(request, "plantillaParametros.html", {"nombreCanal": nombre, "edad": edad, "fecha": fecha_actual, "lenguajes": lenguajes})
+
+def plantillaHija1(request):
+    return render(request, "plantillaHija_1.html", {})
+
+def plantillaHija2(request):
+    return render(request, "plantillaHija_2.html", {})

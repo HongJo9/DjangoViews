@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link type="text/css" href='{% static "css/plantillaBarraNavegacion.css" %}' rel="stylesheet"/>
+</head>
+<body>
+    {% include "plantillaBarraNavegacion.html" %}
+    <h1>HOLA SOY EL GATO HONG JO</h1>
+    {% block content %} 
+    
+    {% endblock %}
+    <p>Este es el pie de pagina</p>
+</body>
+</html>
